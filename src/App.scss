@@ -1,0 +1,268 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #2a2a2a47;
+  width: 100%;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+/* Mobile size */
+.wrapper {
+  height: 100%;
+  margin: 0 auto;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "title"
+    "nav"
+    "image"
+    "about";
+  grid-gap: 2vw;
+}
+
+.main-img {
+  width: 100%;
+}
+
+.ReactGridGallery_tile-viewport {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+.ReactGridGallery_tile {
+  background: none !important;
+}
+
+.about {
+  grid-area: about;
+  padding: 20px;
+}
+
+.edit-button,
+.delete-button {
+  width: 18px;
+  margin-left: 5px;
+  display: inline;
+  cursor: pointer;
+}
+
+.image {
+  grid-area: image;
+  width: auto;
+  align-self: center;
+  object-fit: contain;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  width: 100%;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  grid-area: nav;
+  align-items: center;
+  /* justify-items: center; */
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+nav div {
+  margin: 5px 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: dimgray;
+}
+
+.category-photos h2 {
+  grid-column-start: span 3;
+  justify-self: center;
+}
+
+/* Tablet size */
+@media screen and (min-width: 430px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    max-width: 600px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    justify-self: center;
+  }
+}
+
+/* Tablet size */
+@media screen and (min-width: 790px) {
+  .wrapper {
+    height: 100%;
+    margin-top: 10vh;
+    position: relative;
+    max-width: 950px;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-areas: "about image nav";
+  }
+
+  nav {
+    display: grid;
+    justify-items: left;
+    margin-top: 20%;
+    grid-template-columns: 1fr;
+    height: 200px;
+  }
+
+  nav > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    align-items: center;
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: 790px) {
+    nav > div:hover {
+      border-left: 3px solid black;
+      padding-right: 3px;
+    }
+
+    .container img {
+      -webkit-filter: grayscale(70%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(70%);
+    }
+
+    .container img:hover {
+      -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+      filter: grayscale(0%);
+    }
+  }
+
+  .title {
+    display: none;
+  }
+
+  .category-photos {
+    height: 100%;
+    padding: 20px;
+    display: grid;
+    grid-column-start: span 2;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .category-photos h2 {
+    justify-self: baseline;
+  }
+}
+
+.category-photos {
+  display: grid;
+  justify-items: center;
+  height: 100%;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.category-photos h2 {
+  margin: 0 10px;
+}
+
+// .category-photos img {
+//   object-fit: cover;
+//   width: 150px;
+//   height: 150px;
+// }
+
+.container {
+  max-width: 1400px;
+  grid-column-start: span 2;
+}
+// .container img {
+//   width: 125px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   object-fit: contain !important;
+//   border-radius: 8px;
+//   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+//   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+// }
+
+@media screen and (min-width: 430px) {
+  .container img {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    // width: 180px;
+  }
+  .container img:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+}
+
+.save-button {
+  display: none;
+  max-width: 20px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.login-wrapper {
+  max-width: 350px !important;
+  width: 80%;
+  margin: 0 auto;
+  grid-column-start: span 2;
+}
+
+.add-category {
+  border: 1px solid black;
+  border-radius: 15px;
+  font-size: 3rem;
+  height: 30px;
+  clip-path: circle(50%);
+  cursor: pointer;
+}
+
+.add-category-btn-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+  text-transform: uppercase;
+}
+
+.add-category-btn-div {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  margin-bottom: 2vh;
+}
+
+.ReactGridGallery_tile-icon-bar > div {
+  position: absolute;
+  z-index: 99;
+}
+
+
+@media screen and (max-width: 430px) {
+  #ReactGridGallery {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+}

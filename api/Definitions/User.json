@@ -1,0 +1,29 @@
+{
+     "mainTable": {
+          "tableName": "user"
+     },
+     "properties": {
+          "id": {
+               "perm": "readonly"
+          },
+          "imageId": {
+               "columnName": "image_id",
+               "perm": "writeonly"
+          },
+          "username": {},
+          "imagePath": {
+               "columnName": "image_path",
+               "table": "image"
+          }
+     },
+     "joins": {
+          "image": {
+               "conditions": [
+                    {
+                         "left": "imageId",
+                         "right": "id"
+                    }
+               ]
+          }
+     }
+}
